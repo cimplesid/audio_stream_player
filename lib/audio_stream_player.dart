@@ -34,6 +34,7 @@ class AudioStreamPlayer {
   Future<void> stop() async => await _channel.invokeMethod('stop');
 
   Future<void> mute() async => await _channel.invokeMethod('mute');
+  Future<void> duration() async => await _channel.invokeMethod('duration');
 
   PlayerState get state => _state;
 
