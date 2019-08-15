@@ -45,6 +45,10 @@ class AudioStreamPlayerPlugin private constructor(private val registrar: Registr
                 mute()
                 response.success(null)
             }
+            "duration" -> {
+                duration()
+                response.success(null)
+            }
         }
     }
 
@@ -72,7 +76,9 @@ class AudioStreamPlayerPlugin private constructor(private val registrar: Registr
             player!!.playWhenReady = true
         }
     }
-
+    private fun duration(){
+        player.getDuration()
+    }
     private fun pause() {
         if (player != null) {
             player!!.playWhenReady = false
@@ -100,4 +106,5 @@ class AudioStreamPlayerPlugin private constructor(private val registrar: Registr
             }
         }
     }
+
 }
